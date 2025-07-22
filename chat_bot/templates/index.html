@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="icon" type="image/x-icon" href="./static/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="./static/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./static/apple-touch-icon.png">
+    <link rel="stylesheet" href="./static/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/index.umd.js"></script>
+
+<div class="layout">
+    <div class="sidebar-vertical">
+        <div class="sidebar-icons">
+            <button id="sidebar-newchat" title="Neuer Chat">
+                <img src="./static/plus.png" alt="Neuer Chat" />
+            </button>
+            <div class="sidebar-divider"></div>
+            <button id="sidebar-verlauf" title="History">
+                <img src="./static/history.png" alt="History" />
+            </button>
+            <button id="sidebar-profile" title="Profil">
+                <img src="./static/user.png" alt="Profil" />
+            </button>
+            <button id="sidebar-info" title="Information">
+                <img src="./static/info.png" alt="Information" />
+            </button>
+        </div>
+    </div>
+
+    <div id="sidebar-history-box" class="sidebar-history-box">
+        <div class="history-heading">+ Verlauf</div>
+        <ul id="chat-history"></ul>
+    </div>
+
+    <div class="main-content">
+        <div class="chat-container">
+            <div class="logo-sticky">
+                <img class="logo" src="./static/logo3.png" alt="Logo">
+            </div>
+            <div class="scroll-wrapper">
+                <div class="chatbox" id="chatbox"></div>
+                <div id="scroll-anchor"></div>
+            </div>
+            <div class="input-area">
+                <input id="input" type="text" placeholder="Ask IDEA Bot..." autocomplete="off" />
+                <button id="send" aria-label="Senden" disabled>
+                    <svg viewBox="0 0 24 24"><path d="M12 5l7 7h-4v7h-6v-7H5z"/></svg>
+                </button>
+            </div>
+            <div class="input-footer-note">This is a Demo-Version</div>
+            <div id="popup" class="popup">New chat created!</div>
+        </div>
+    </div>
+</div>
+
+<div id="info-overlay" class="info-overlay">
+    <div class="info-content">
+        <button class="info-close" id="info-close">&times;</button>
+        <h2>About the IDEA Bot...</h2>
+        <div id="info-text"></div>
+    </div>
+</div>
+
+<script src="./static/app.js"></script>
+</body>
+</html>

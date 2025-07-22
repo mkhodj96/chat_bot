@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pipeline is running...</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<h2>Pipeline is running...</h2>
+<div class="loader-wrapper">
+    <div class="loader"></div>
+    <img src="/static/logo3.png" class="logo" />
+</div>
+<p>Please wait...</p>
+
+<script>
+    fetch('/start');
+
+    async function checkStatus() {
+        const res = await fetch("/status");
+        const data = await res.json();
+        if (data.done) {
+            document.title = "Pipeline complete ✅";
+            document.body.innerHTML = "<h2>Pipeline completed successfully.</h2>";
+        } else {
+            setTimeout(checkStatus, 1000);
+        }
+    }
+
+    checkStatus();
+</script>
+</body>
+</html>
