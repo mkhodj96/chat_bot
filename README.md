@@ -9,7 +9,7 @@ The **ideaShop ChatBot** is a digital assistant for Aidea Shop, an art gallery a
 
 _Example ChatBot in Action:_
 
-![Chatbot Screenshot](./screenshots.png)  
+![Chatbot Screenshot](./screenshot.png)  
 *ChatBot answering questions about shop products.*
 
 ---
